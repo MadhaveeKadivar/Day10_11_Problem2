@@ -22,13 +22,24 @@ do
 	fi
 	a=$(($a+1))
 done
+echo
 echo "Heads won $heads times"
 echo "Tails won $tails times"
-
+echo
+if(($heads==$tails))
+then
+	echo "It's a tie between Heads and Tails"
+	echo
+	echo "Coin filpping until Diffrence of minimum 2 point achieved"
+        echo
+	while((($heads-$tails)!=2 && ($tails-$heads)!=2))
+        do
+                coinsimulation
+	done
+fi
+echo
 if(($heads>$tails))
 then echo "Heads wons by $(($heads-$tails)) times more than Tails"
 elif(($tails>$heads))
 then echo "Tails wons by $(($tails-$heads)) times more than Heads"
-elif(($heads==$tails))
-then echo "It's a tie between Heads and Tails "
 fi
