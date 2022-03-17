@@ -17,7 +17,18 @@ function coinsimulation(){
 while(($a<=$n))
 do
         coinsimulation
+	if(($heads==21 || $tails==21))
+        then break
+	fi
 	a=$(($a+1))
 done
 echo "Heads won $heads times"
 echo "Tails won $tails times"
+
+if(($heads>$tails))
+then echo "Heads wons by $(($heads-$tails)) times more than Tails"
+elif(($tails>$heads))
+then echo "Tails wons by $(($tails-$heads)) times more than Heads"
+elif(($heads==$tails))
+then echo "It's a tie between Heads and Tails "
+fi
